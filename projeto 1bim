@@ -1,0 +1,93 @@
+#include <stdio.h>
+
+int main() {
+    int opcao;
+    float raio, base, altura, largura;
+    float area, volume;
+    const float PI = 3.14159;
+
+    printf("=== CALCULADORA DE ÁREAS E VOLUMES ===\n");
+    printf("1. Área de um círculo\n");
+    printf("2. Área de um triângulo\n");
+    printf("3. Área de um retângulo\n");
+    printf("4. Volume de um cilindro\n");
+    printf("5. Volume de um cone\n");
+    printf("6. Volume de uma esfera\n");
+    printf("Escolha uma opção (1-6): ");
+    scanf("%d", &opcao);
+
+    if (opcao == 1) {
+        printf("\nDigite o raio do círculo: ");
+        scanf("%f", &raio);
+        if (raio > 0) {
+            area = PI * raio * raio;
+            printf("Área do círculo = %.2f\n", area);
+        } else {
+            printf("Erro: o raio deve ser positivo.\n");
+        }
+
+    } else if (opcao == 2) {
+        printf("\nDigite a base do triângulo: ");
+        scanf("%f", &base);
+        printf("Digite a altura do triângulo: ");
+        scanf("%f", &altura);
+        if (base > 0 && altura > 0) {
+            area = (base * altura) / 2;
+            printf("Área do triângulo = %.2f\n", area);
+        } else {
+            printf("Erro: base e altura devem ser positivas.\n");
+        }
+
+    } else if (opcao == 3) {
+        printf("\nDigite a largura do retângulo: ");
+        scanf("%f", &largura);
+        printf("Digite a altura do retângulo: ");
+        scanf("%f", &altura);
+        if (largura > 0 && altura > 0) {
+            area = largura * altura;
+            printf("Área do retângulo = %.2f\n", area);
+        } else {
+            printf("Erro: largura e altura devem ser positivas.\n");
+        }
+
+    } else if (opcao == 4) {
+        printf("\nDigite o raio do cilindro: ");
+        scanf("%f", &raio);
+        printf("Digite a altura do cilindro: ");
+        scanf("%f", &altura);
+        if (raio > 0 && altura > 0) {
+            volume = PI * raio * raio * altura;
+            printf("Volume do cilindro = %.2f\n", volume);
+        } else {
+            printf("Erro: raio e altura devem ser positivos.\n");
+        }
+
+    } else if (opcao == 5) {
+        printf("\nDigite o raio do cone: ");
+        scanf("%f", &raio);
+        printf("Digite a altura do cone: ");
+        scanf("%f", &altura);
+        if (raio > 0 && altura > 0) {
+            volume = (PI * raio * raio * altura) / 3;
+            printf("Volume do cone = %.2f\n", volume);
+        } else {
+            printf("Erro: raio e altura devem ser positivos.\n");
+        }
+
+    } else if (opcao == 6) {
+        printf("\nDigite o raio da esfera: ");
+        scanf("%f", &raio);
+        if (raio > 0) {
+            volume = (4.0 / 3.0) * PI * raio * raio * raio;
+            printf("Volume da esfera = %.2f\n", volume);
+        } else {
+            printf("Erro: o raio deve ser positivo.\n");
+        }
+
+    } else {
+        printf("Opção inválida!\n");
+    }
+
+    printf("\nPrograma encerrado.\n");
+    return 0;
+}
